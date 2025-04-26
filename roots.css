@@ -1,0 +1,101 @@
+:root {
+  /* Dark theme colors */
+  --text-color: #edf3ff;
+  --subheading-color: #97a7ca;
+  --placeholder-color: #c3cdde;
+  --primary-color: #101623;
+  --secondary-color: #283045;
+  --secondary-hover-color: #333e58;
+  --scrollbar-color: #626a7f;
+  --bg: #051118;
+  --prompt-bg: #245A64;
+}
+
+body.light-theme {
+  /* Light theme colors */
+  --text-color: #090c13;
+  --subheading-color: #7b8cae;
+  --placeholder-color: #606982;
+  --primary-color: #f3f7ff;
+  --secondary-color: #dce6f9;
+  --secondary-hover-color: #d2ddf2;
+  --scrollbar-color: #a2aac2;
+  --bg: #F7F9FE;
+  --prompt-bg: wheat;
+}
+
+
+.user-message {
+  position: relative;
+}
+
+/* Custom tick container - hidden by default */
+.user-message .custom-tick {
+  position: absolute;
+  bottom: -20px;
+  right: 10px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+/* Show only on hover */
+.user-message:hover .custom-tick {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tick circle styles */
+.tick {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Color variations */
+.tick.sent { background-color: grey; }
+.tick.delivered { background-color: green; }
+.tick.read { background-color: blue; }
+.tick.failed { background-color: red; }
+
+.message-text h1, .message-text h2, .message-text h3 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+
+
+.message-text code {
+  background-color: #eee;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+.message-text pre {
+  background-color: #111;
+  padding: 10px;
+  border-radius: 8px;
+  overflow-x: auto;
+  color: #fff;
+}
+.message-text blockquote {
+  border-left: 4px solid #ccc;
+  margin: 10px 0;
+  padding-left: 10px;
+  color: #666;
+}
+
+
+#voice-chat-btn {
+  color: #1d7efd;
+  transition: background 0.3s ease;
+}
+#voice-chat-btn:hover {
+  background: var(--secondary-hover-color);
+}
